@@ -1,0 +1,33 @@
+{% extends 'DA/base.html' %}
+
+{% block title %}Game{% endblock %}
+{% block content %}
+<h1 class="text-center">{{ game }}</h1>
+
+
+<div class="row">
+    <div class="col-2">
+        <img src="{{ game.img.url }}" class="img-fluid">
+        <small>Developer: {{ game.creator }}</small>
+        <small>Release: {{ game.release }}</small>
+            <div class="row my-3">
+                <div class="col-7 align-self-center">
+                    <p>Companions:</p>
+                    {% for companion in game.companion_set.all %}
+                    <p><ul type="square"><li><a style="color:white" href="{{ companion.url }}">{{ companion }}</a></li></ul></p>
+                    {% endfor %}
+                </div>
+            </div>
+    </div>
+    <div class="col-8">
+        <h1>Plot</h1><small>{{ game.plot }}</small>
+    </div>
+    <div class="col-2">
+        <h3><a style="color:white" href="{% url 'DragonAge:race_list' %}">Race</a></h3>
+        <h3><a style="color:white" href="{% url 'DragonAge:clasess_list' %}">Class</a></h3>
+        <h3><a style="color:white" href="{% url 'DragonAge:Locations_list' %}">Locations</a></h3>
+        <h4><a style="color:white" href="{% url 'DragonAge:Companion_list' %}">All Companion</a></h4>
+    </div>
+
+</div>
+{% endblock %}

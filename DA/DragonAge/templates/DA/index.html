@@ -1,0 +1,30 @@
+{% extends 'DA/base.html' %}
+
+{% block title %}Dragon Age{% endblock %}
+{% block content %}
+
+
+<div class="row">
+    <div class="col-6">
+        <h1 class="text-left">Dragon Age Series</h1>
+        {% for game in g_game %}
+        <div class="row">
+            <div class="col-3 my-3">
+               <img src="{{ game.img.url }}" class="img-fluid">
+            </div>
+            <div class="col-9 my-3 align-self-center">
+               <p><a style="color:white" href="{{ game.url }}">{{ game }}</a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-6">
+        <h1 class="text-center">Developer</h1>
+        <p>BioWare is a Canadian video game developer based in Edmonton, Alberta. It was founded in 1995 by newly graduated medical doctors Ray Muzyka, Greg Zeschuk and Augustine Yip, alongside Trent Oster, Brent Oster, and Marcel Zeschuk. Since 2007, the company has been owned by American publisher Electronic Arts.
+BioWare specializes in role-playing video games, and achieved recognition for developing highly praised and successful licensed franchises: Baldur's Gate, Neverwinter Nights, and Star Wars: Knights of the Old Republic. They proceeded to make several other successful games based on original intellectual property: Jade Empire, the Mass Effect series, and the Dragon Age series. In 2011, BioWare launched their first massively multiplayer online role-playing game, Star Wars: The Old Republic.</p>
+        <h3 class="text-center">Technology</h3>
+        <p>Between 1998 and 2011, BioWare developed a number of in-house video game engines to serve as technical basis for their games. Some of these engines were then licensed to other companies to develop their own games. Others came with modding toolkits, allowing the fan community to implement original adventures using the technology of BioWare's games.Like Neverwinter Nights, Origins was released with a toolset to allow the players to run their own adventure modules on the Eclipse Engine. An upgraded version of the Eclipse Engine, internally known as the Lycium Engine, was used to produce Dragon Age II (2011). In 2013, EA confirmed that all future games developed by BioWare will be made on EA DICE's Frostbite 3 engine. All three of BioWare's latest games (Dragon Age: Inquisition, Mass Effect: Andromeda and Anthem) were announced to be based on the Frostbite 3 engine, as part of the general move towards a unified technology foundation across all of Electronic Arts' development studios.</p>
+    </div>
+</div>
+
+{% endblock %}

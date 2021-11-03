@@ -1,0 +1,22 @@
+{% extends 'DA/base.html' %}
+
+{% block title %}Race{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Race</h1>
+<div class="row">
+        {% for race in race %}
+            <div class="col-2 my-3">
+               <img src="{{ race.img.url }}" class="img-fluid">
+            </div>
+            <div class="col-3 my-3 align-self-center">
+               <p>{{ race }}</p>
+            </div>
+            <div class="col-7 my-3 align-self-center">
+               <p>{{ race.plot }}</p>
+            </div>
+
+        {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'DA/base.html' %}
+
+{% block title %}Class{% endblock %}
+{% block content %}
+<h1 class="text-center">Classes</h1>
+<div class="row">
+    {% for class in class %}
+    <div class="col-2 my-3 align-self-center">
+        <img src="{{ class.img.url }}" class="img-fluid">
+    </div>
+    <div class="col-3 my-3 align-self-center">
+        <p>{{ class }}</p>
+    </div>
+    <div class="col-7 my-3 align-self-center">
+        <p>{{ class.plot }}</p>
+    </div>
+        {% endfor %}
+</div>
+{% endblock %}

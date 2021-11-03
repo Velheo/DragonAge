@@ -1,0 +1,69 @@
+{% extends 'DA/base.html' %}
+{% block title %}Search{% endblock %}
+{% block content %}
+<h1 class="text-center">Searching "{{ string }}"</h1>
+
+{% if game %}
+<h3>Found game: {{ game|length }}</h3>
+{% for game in game %}
+<div class="row my-3">
+    <div class="col-2">
+        <img src="{{ game.img.url }}" class="img-fluid">
+    </div>
+    <div class="col-8">
+        <p><a style="color:white" href="{{ game.url }}">{{ game }}</a></p>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<h3>No Game Found</h3>
+{% endif %}
+
+{% if companion %}
+<h3>Found Companion: {{ companion|length }}</h3>
+{% for companion in companion %}
+<div class="row my-3">
+    <div class="col-2 align-self-center">
+        <img src="{{ companion.img.url }}" class="img-fluid">
+    </div>
+    <div class="col-8">
+        <p><a style="color:white" href="{{ companion.url }}">{{ companion }}</a></p>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<h3>No Companion Found</h3>
+{% endif %}
+
+{% if race %}
+<h3>Found Race: {{ race|length }}</h3>
+{% for race in race %}
+<div class="row my-3">
+    <div class="col-2 align-self-center">
+        <img src="{{ race.img.url }}" class="img-fluid">
+    </div>
+    <div class="col-8">
+        <p><a style="color:white" href="{{ race.url }}">{{ race }}</a></p>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<h3>No Race Found</h3>
+{% endif %}
+
+{% if classes %}
+<h3>Found Classes: {{ classes|length }}</h3>
+{% for classes in classes %}
+<div class="row my-3">
+    <div class="col-2 align-self-center">
+        <img src="{{ classes.img.url }}" class="img-fluid">
+    </div>
+    <div class="col-8 align-self-center">
+        <p><a style="color:white" href="{{ classes.url }}">{{ classes }}</a></p>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<h3>No Classes Found</h3>
+{% endif %}
+{% endblock %}

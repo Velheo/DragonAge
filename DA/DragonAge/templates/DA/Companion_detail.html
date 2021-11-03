@@ -1,0 +1,36 @@
+{% extends 'DA/base.html' %}
+
+{% block title %}Companion{% endblock %}
+{% block content %}
+<h1 class="text-center">{{ companion.imy }}</h1>
+
+<div class="row">
+    <div class="col-8">
+        <h1 class="text-center">Background</h1>
+        <p>{{ companion.plot }}</p>
+    </div>
+    <div class="col-4">
+        <div class="row">
+            <div class="col-8 my-2">
+               <img src="{{ companion.img.url }}" class="img-fluid">
+            </div>
+            <div class="row">
+                <div class="col-10 my-3">
+                   <p>Appearances: <a style="color:white" href="{{ companion.game.url }}"> {{ companion.game }}</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 my-2">
+                    <p>Race:  <a style="color:white" href="{{ companion.race.url }}">{{ companion.race }}</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10 my-2">
+                    <p>Class: <a style="color:white" href="{{ companion.classes.url }}">{{ companion.classes }}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
